@@ -14,18 +14,21 @@ public class Url {
     private String originalURL;
     private String shortURL;
     private LocalDateTime createdAt;
+    private Integer numberOfVisits;
 
-    public Url(Long id, String originalURL, String shortURL, LocalDateTime createdAt) {
+    public Url(Long id, String originalURL, String shortURL, LocalDateTime createdAt, Integer numberOfVisits) {
         this.id = id;
         this.originalURL = originalURL;
         this.shortURL = shortURL;
         this.createdAt = createdAt;
+        this.numberOfVisits = numberOfVisits;
     }
 
-    public Url(String originalURL, String shortURL, LocalDateTime createdAt) {
+    public Url(String originalURL, String shortURL, LocalDateTime createdAt, Integer numberOfVisits) {
         this.originalURL = originalURL;
         this.shortURL = shortURL;
         this.createdAt = createdAt;
+        this.numberOfVisits = numberOfVisits;
     }
 
     public Url() {
@@ -38,7 +41,16 @@ public class Url {
                 ", originalURL='" + originalURL + '\'' +
                 ", shortURL='" + shortURL + '\'' +
                 ", createdAt=" + createdAt +
+                ", numberOfVisits=" + numberOfVisits +
                 '}';
+    }
+
+    public Integer getNumberOfVisits() {
+        return numberOfVisits;
+    }
+
+    public void setNumberOfVisits(Integer numberOfVisits) {
+        this.numberOfVisits = numberOfVisits;
     }
 
     public Long getId() {

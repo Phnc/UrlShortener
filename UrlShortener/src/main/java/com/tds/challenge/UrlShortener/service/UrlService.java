@@ -30,8 +30,13 @@ public class UrlService implements IUrlService{
             newUrl.setOriginalURL(url);
             newUrl.setShortURL(encoded);
             newUrl.setCreatedAt(LocalDateTime.now());
+            newUrl.setNumberOfVisits(0);
 
             Url toReturn = saveShortURL(newUrl);
+            if(toReturn != null){
+                return toReturn;
+            }
+
         }
         return null;
     }
