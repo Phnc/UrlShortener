@@ -53,6 +53,13 @@ public class UrlService implements IUrlService{
         return toReturn;
     }
 
+    @Override
+    public void updateNumberOfVisits(String url) {
+        Url toUpdate = urlRepository.findByShortURL(url);
+        toUpdate.setNumberOfVisits(toUpdate.getNumberOfVisits() + 1);
+        urlRepository.save(toUpdate);
+    }
+
     private String encodeURL(String url){
         String encoded = "";
         encoded = Hashing.crc32().hashString(url.concat(LocalDateTime.now().toString()), StandardCharsets.UTF_8).toString();

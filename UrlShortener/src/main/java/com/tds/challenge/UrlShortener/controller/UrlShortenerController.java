@@ -50,7 +50,7 @@ public class UrlShortenerController {
                 errorResponse.setError("The required URL does not exist.");
                 return new ResponseEntity<UrlErrorResponse>(errorResponse, HttpStatus.BAD_REQUEST);
             }
-
+            urlService.updateNumberOfVisits(toReturn.getShortURL());
             response.sendRedirect(toReturn.getOriginalURL());
 
         } else{

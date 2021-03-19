@@ -12,4 +12,6 @@ public interface IUrlService {
 
     public  Url getEncodedURL(String url);
 
+    public void updateNumberOfVisits (String url);
+
 }
