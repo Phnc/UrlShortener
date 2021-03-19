@@ -1,10 +1,12 @@
 package com.tds.challenge.UrlShortener.model;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import java.time.LocalDateTime;
 
+@Entity
 public class Url {
 
     @Id
@@ -16,19 +18,19 @@ public class Url {
     private LocalDateTime createdAt;
     private Integer numberOfVisits;
 
-    public Url(Long id, String originalURL, String shortURL, LocalDateTime createdAt, Integer numberOfVisits) {
+    public Url(Long id, String originalURL, String shortURL, LocalDateTime createdAt) {
         this.id = id;
         this.originalURL = originalURL;
         this.shortURL = shortURL;
         this.createdAt = createdAt;
-        this.numberOfVisits = numberOfVisits;
+        this.numberOfVisits = 0;
     }
 
-    public Url(String originalURL, String shortURL, LocalDateTime createdAt, Integer numberOfVisits) {
+    public Url(String originalURL, String shortURL, LocalDateTime createdAt) {
         this.originalURL = originalURL;
         this.shortURL = shortURL;
         this.createdAt = createdAt;
-        this.numberOfVisits = numberOfVisits;
+        this.numberOfVisits = 0;
     }
 
     public Url() {
