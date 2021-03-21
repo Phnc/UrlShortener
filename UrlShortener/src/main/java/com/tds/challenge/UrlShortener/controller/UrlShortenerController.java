@@ -28,6 +28,10 @@ public class UrlShortenerController {
         this.urlService = urlService;
     }
 
+    public UrlShortenerController() {
+
+    }
+
     @PostMapping("/generate")
     public ResponseEntity<?> generateShortLink(@RequestBody String url){
         Url toReturn = urlService.createShortURL(url);
