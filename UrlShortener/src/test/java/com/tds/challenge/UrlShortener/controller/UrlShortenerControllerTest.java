@@ -31,7 +31,7 @@ public class UrlShortenerControllerTest {
         HttpEntity<String> request = new HttpEntity<>(longURL);
 
         ResponseEntity result = this.restTemplate.postForEntity(uri,request,String.class);
-        assertTrue("Short url not generated", result.toString().contains("http://localhost:8080/"));
+        assertTrue("Short url not generated", result.toString().contains("shortURL"));
         System.out.println("Url generation test passed");
 
     }
@@ -45,7 +45,7 @@ public class UrlShortenerControllerTest {
         ResponseEntity result = this.restTemplate.postForEntity(uri,request,String.class);
 
 
-        int shortURLBegin = result.toString().lastIndexOf("http://localhost:8080/") + 22;
+        int shortURLBegin = result.toString().lastIndexOf("shortURL\":") + 11;
         int shortURLEnd = shortURLBegin + 8;
         String shortURL = result.toString().substring(shortURLBegin, shortURLEnd);
 
@@ -67,7 +67,7 @@ public class UrlShortenerControllerTest {
         ResponseEntity result = this.restTemplate.postForEntity(uri,request,String.class);
 
 
-        int shortURLBegin = result.toString().lastIndexOf("http://localhost:8080/") + 22;
+        int shortURLBegin = result.toString().lastIndexOf("shortURL\":") + 11;
         int shortURLEnd = shortURLBegin + 8;
         String shortURL = result.toString().substring(shortURLBegin, shortURLEnd);
 

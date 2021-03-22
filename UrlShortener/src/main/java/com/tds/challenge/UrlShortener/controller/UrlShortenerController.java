@@ -39,8 +39,7 @@ public class UrlShortenerController {
         if(toReturn != null){
             UrlResponse urlResponse = new UrlResponse();
             urlResponse.setOriginalURL(toReturn.getOriginalURL());
-            String baseServerAddress = ServletUriComponentsBuilder.fromCurrentContextPath().build().toUriString();
-            String shortURL = baseServerAddress + "/"+ toReturn.getShortURL();
+            String shortURL = toReturn.getShortURL();
             urlResponse.setShortURL(shortURL);
             return new ResponseEntity<UrlResponse>(urlResponse, HttpStatus.OK);
         }
