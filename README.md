@@ -13,3 +13,7 @@ Another function available in this Url Shortener is to view the statistics behin
 
 ### How do we create a short URL?
 As we want to take a given long URL and transform it in a smaller one, we'll use a hashing algorithm, such as CRC32 to transform it. The problem with using just this approach is: if the same long URL was provided different times, it would always result in the same short link. So, to overcome this problem, when generating the hash, we also pass the current date and time to the hashing algorithm and it solves the issue.
+
+## This project is available for use
+This project was deployed to heroku and is available on the following link: https://url-shortener-phnc.herokuapp.com/
+Please, feel free to try it out
