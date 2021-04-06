@@ -16,4 +16,5 @@ As we want to take a given long URL and transform it in a smaller one, we'll use
 
 ## This project is available for use
 This project was deployed to heroku and is available on the following URL: https://url-shortener-phnc.herokuapp.com/
+
 Please, feel free to try it out using Postman, Insomnia or any tool of your preference!
